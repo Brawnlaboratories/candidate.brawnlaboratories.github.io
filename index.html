@@ -166,8 +166,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .animate-fade-in {
@@ -213,8 +220,15 @@
         }
 
         @keyframes slide-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -225,55 +239,68 @@
     <nav class="sticky top-0 z-50 glass-card border-b border-slate-200 dark:border-slate-800 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                <div
+                    class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
                     <i class="fas fa-users-rays"></i>
                 </div>
-                <h1 class="text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-blue-200">
+                <h1
+                    class="text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-blue-200">
                     Nextgen Recruitment Suite <span class="text-slate-400 font-medium">| Portal</span>
                 </h1>
             </div>
 
             <div class="flex items-center gap-4">
-                <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <button id="theme-toggle"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:inline"></i>
                 </button>
                 <div id="user-menu" class="hidden flex items-center gap-4">
-                    <button id="btn-nav-profile" class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
-                        <div id="user-avatar" class="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">C</div>
+                    <button id="btn-nav-profile"
+                        class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+                        <div id="user-avatar"
+                            class="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-lg flex items-center justify-center text-sm font-black flex-shrink-0">
+                            C</div>
                         <div class="hidden md:block text-left">
-                            <p id="user-display-name" class="text-xs font-bold leading-none text-slate-800 dark:text-white">Candidate</p>
+                            <p id="user-display-name"
+                                class="text-xs font-bold leading-none text-slate-800 dark:text-white">Candidate</p>
                             <p id="user-display-email" class="text-[10px] text-slate-500 mt-0.5">email@example.com</p>
                         </div>
                         <i class="fas fa-chevron-down text-[10px] text-slate-400 hidden md:inline"></i>
                     </button>
-                    <button id="btn-logout" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-400 hover:text-red-500 transition-all" title="Logout">
+                    <button id="btn-logout"
+                        class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 text-slate-400 hover:text-red-500 transition-all"
+                        title="Logout">
                         <i class="fas fa-sign-out-alt"></i>
                     </button>
                 </div>
-                <button id="btn-show-auth" onclick="toggleAuthModal(true, 'login')" class="btn-primary !py-2 text-sm">Sign In</button>
+                <button id="btn-show-auth" onclick="toggleAuthModal(true, 'login')"
+                    class="btn-primary !py-2 text-sm">Sign In</button>
             </div>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto p-6">
-        
+
         <!-- Auth Modal -->
         <div id="auth-modal-overlay" class="hidden">
             <div class="auth-modal-content">
-                <button onclick="toggleAuthModal(false)" class="absolute -top-12 right-0 md:-right-12 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all">
+                <button onclick="toggleAuthModal(false)"
+                    class="absolute -top-12 right-0 md:-right-12 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all">
                     <i class="fas fa-times text-lg"></i>
                 </button>
-                
+
                 <div class="glass-card rounded-3xl p-8 shadow-2xl border border-white/20">
                     <div class="text-center mb-8">
-                        <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Sign in or create an account to get started.</p>
+                        <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Sign in or create an account to get
+                            started.</p>
                     </div>
 
                     <!-- Registration Flow -->
                     <div id="register-form" class="space-y-4">
                         <div class="space-y-1">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Email Address</label>
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Email
+                                Address</label>
                             <input type="email" id="reg-email" placeholder="john@example.com" class="theme-input">
                         </div>
                         <div class="space-y-1">
@@ -286,19 +313,31 @@
                             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">or</span>
                             <div class="flex-1 h-px bg-slate-200 dark:bg-slate-700"></div>
                         </div>
-                        <button id="btn-google-register" class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 hover:shadow-md transition-all font-bold text-sm text-slate-700 dark:text-slate-200">
-                            <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+                        <button id="btn-google-register"
+                            class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 hover:shadow-md transition-all font-bold text-sm text-slate-700 dark:text-slate-200">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4"
+                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                                <path fill="#34A853"
+                                    d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                                <path fill="#FBBC05"
+                                    d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" />
+                                <path fill="#EA4335"
+                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z" />
+                            </svg>
                             Continue with Google
                         </button>
                         <p class="text-center text-sm text-slate-500 mt-4">
-                            Already have an account? <button onclick="toggleAuthMode('login')" class="text-blue-600 font-bold hover:underline">Sign In</button>
+                            Already have an account? <button onclick="toggleAuthMode('login')"
+                                class="text-blue-600 font-bold hover:underline">Sign In</button>
                         </p>
                     </div>
 
                     <!-- Login Flow -->
                     <div id="login-form" class="hidden space-y-4">
                         <div class="space-y-1">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Email Address</label>
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest">Email
+                                Address</label>
                             <input type="email" id="login-email" placeholder="john@example.com" class="theme-input">
                         </div>
                         <div class="space-y-1">
@@ -311,12 +350,23 @@
                             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">or</span>
                             <div class="flex-1 h-px bg-slate-200 dark:bg-slate-700"></div>
                         </div>
-                        <button id="btn-google-login" class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 hover:shadow-md transition-all font-bold text-sm text-slate-700 dark:text-slate-200">
-                            <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+                        <button id="btn-google-login"
+                            class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-blue-400 hover:shadow-md transition-all font-bold text-sm text-slate-700 dark:text-slate-200">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4"
+                                    d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" />
+                                <path fill="#34A853"
+                                    d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" />
+                                <path fill="#FBBC05"
+                                    d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" />
+                                <path fill="#EA4335"
+                                    d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z" />
+                            </svg>
                             Continue with Google
                         </button>
                         <p class="text-center text-sm text-slate-500 mt-4">
-                            New here? <button onclick="toggleAuthMode('register')" class="text-blue-600 font-bold hover:underline">Create Account</button>
+                            New here? <button onclick="toggleAuthMode('register')"
+                                class="text-blue-600 font-bold hover:underline">Create Account</button>
                         </p>
                     </div>
                 </div>
@@ -328,136 +378,227 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
                     <h2 class="text-4xl font-black text-slate-900 dark:text-white">Setup Your Profile</h2>
-                    <p class="text-slate-500 dark:text-slate-400 mt-1">Tell us about yourself to match you with the right opportunities.</p>
+                    <p class="text-slate-500 dark:text-slate-400 mt-1">Tell us about yourself to match you with the
+                        right opportunities.</p>
                 </div>
-                <div class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-2 rounded-2xl border border-slate-200 dark:border-slate-700">
+                <div
+                    class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-2 rounded-2xl border border-slate-200 dark:border-slate-700">
                     <div class="stepper-dot active">1</div>
                     <div class="w-12 h-1 rounded-full bg-slate-200 dark:bg-slate-700"></div>
                     <div class="stepper-dot inactive">2</div>
                 </div>
             </div>
 
+
             <form id="form-profile" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Personal Info -->
                 <div class="glass-card p-8 rounded-3xl space-y-6">
-                    <h3 class="text-lg font-bold flex items-center gap-2"><i class="fas fa-user text-blue-500"></i> Personal Details</h3>
+                    <h3 class="text-lg font-bold flex items-center gap-2"><i class="fas fa-user text-blue-500"></i>
+                        Personal Details</h3>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-1 col-span-2">
-                             <label for="input-prof-name" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
-                             <input type="text" id="input-prof-name" name="name" required class="theme-input" autocomplete="name">
+                            <label for="input-prof-name"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
+                            <input type="text" id="input-prof-name" name="name" required class="theme-input"
+                                autocomplete="name">
                         </div>
                         <div class="space-y-1">
-                             <label for="input-prof-phone" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Phone Number</label>
-                             <input type="tel" id="input-prof-phone" name="phone" required class="theme-input" autocomplete="tel">
+                            <label for="input-prof-phone"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Phone
+                                Number</label>
+                            <input type="tel" id="input-prof-phone" name="phone" required class="theme-input"
+                                autocomplete="tel">
                         </div>
                         <div class="space-y-1 col-span-2">
-                             <label for="prof-gender" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Gender</label>
-                             <select id="prof-gender" name="gender" class="theme-input">
-                                 <option value="Male">Male</option>
-                                 <option value="Female">Female</option>
-                                 <option value="Other">Other</option>
-                             </select>
+                            <label for="prof-gender"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Gender</label>
+                            <select id="prof-gender" name="gender" class="theme-input">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="space-y-1 col-span-2">
-                             <label for="prof-address1" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Street Address</label>
-                             <input type="text" id="prof-address1" name="addressLine1" placeholder="House No., Building, Street" class="theme-input" autocomplete="address-line1">
+                            <label for="prof-address1"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Street
+                                Address</label>
+                            <input type="text" id="prof-address1" name="addressLine1"
+                                placeholder="House No., Building, Street" class="theme-input"
+                                autocomplete="address-line1">
                         </div>
                         <div class="space-y-1 col-span-2">
-                             <label for="prof-address2" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Address Line 2 <span class="normal-case font-normal text-slate-300">(optional)</span></label>
-                             <input type="text" id="prof-address2" name="addressLine2" placeholder="Area, Colony, Landmark" class="theme-input" autocomplete="address-line2">
+                            <label for="prof-address2"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Address Line 2
+                                <span class="normal-case font-normal text-slate-300">(optional)</span></label>
+                            <input type="text" id="prof-address2" name="addressLine2"
+                                placeholder="Area, Colony, Landmark" class="theme-input" autocomplete="address-line2">
                         </div>
                         <div class="space-y-1">
-                             <label for="address-pincode" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Pincode</label>
-                             <input type="text" id="address-pincode" name="pincode" placeholder="6-digit pincode" maxlength="6" pattern="[0-9]{6}" class="theme-input" autocomplete="postal-code">
+                            <label for="address-pincode"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Pincode</label>
+                            <input type="text" id="address-pincode" name="pincode" placeholder="6-digit pincode"
+                                maxlength="6" pattern="[0-9]{6}" class="theme-input" autocomplete="postal-code">
                         </div>
                         <div class="space-y-1">
-                             <label for="address-city" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">City</label>
-                             <input type="text" id="address-city" name="city" placeholder="e.g. Mumbai" class="theme-input" autocomplete="address-level2">
+                            <label for="address-city"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">City</label>
+                            <input type="text" id="address-city" name="city" placeholder="e.g. Mumbai"
+                                class="theme-input" autocomplete="address-level2">
                         </div>
                         <div class="space-y-1 col-span-2">
-                             <label for="address-state" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">State</label>
-                             <select id="address-state" name="state" class="theme-input" autocomplete="address-level1">
-                                 <option value="">Select State / UT</option>
-                                 <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option><option>Andaman &amp; Nicobar Islands</option><option>Chandigarh</option><option>Dadra &amp; Nagar Haveli</option><option>Daman &amp; Diu</option><option>Delhi (NCT)</option><option>Jammu &amp; Kashmir</option><option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option>
-                             </select>
+                            <label for="address-state"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">State</label>
+                            <select id="address-state" name="state" class="theme-input" autocomplete="address-level1">
+                                <option value="">Select State / UT</option>
+                                <option>Andhra Pradesh</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Assam</option>
+                                <option>Bihar</option>
+                                <option>Chhattisgarh</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Odisha</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Telangana</option>
+                                <option>Tripura</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Uttarakhand</option>
+                                <option>West Bengal</option>
+                                <option>Andaman &amp; Nicobar Islands</option>
+                                <option>Chandigarh</option>
+                                <option>Dadra &amp; Nagar Haveli</option>
+                                <option>Daman &amp; Diu</option>
+                                <option>Delhi (NCT)</option>
+                                <option>Jammu &amp; Kashmir</option>
+                                <option>Ladakh</option>
+                                <option>Lakshadweep</option>
+                                <option>Puducherry</option>
+                            </select>
                         </div>
                     </div>
                 </div>
 
                 <!-- Professional Info -->
                 <div class="glass-card p-8 rounded-3xl space-y-6">
-                    <h3 class="text-lg font-bold flex items-center gap-2"><i class="fas fa-briefcase text-blue-500"></i> Professional Summary</h3>
+                    <h3 class="text-lg font-bold flex items-center gap-2"><i class="fas fa-briefcase text-blue-500"></i>
+                        Professional Summary</h3>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-1 col-span-2">
-                             <label for="prof-curr-comp" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Current Company</label>
-                             <input type="text" id="prof-curr-comp" name="currentCompany" class="theme-input" autocomplete="organization">
+                            <label for="prof-curr-comp"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Current
+                                Company</label>
+                            <input type="text" id="prof-curr-comp" name="currentCompany" class="theme-input"
+                                autocomplete="organization">
                         </div>
                         <div class="space-y-1">
-                             <label for="prof-exp" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Experience (Yrs)</label>
-                             <input type="number" id="prof-exp" name="experience" step="0.5" class="theme-input">
+                            <label for="prof-exp"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Experience
+                                (Yrs)</label>
+                            <input type="number" id="prof-exp" name="experience" step="0.5" class="theme-input">
                         </div>
                         <div class="space-y-1">
-                             <label for="prof-notice" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Notice Period (Days)</label>
-                             <input type="number" id="prof-notice" name="noticePeriod" class="theme-input">
+                            <label for="prof-notice"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Notice Period
+                                (Days)</label>
+                            <input type="number" id="prof-notice" name="noticePeriod" class="theme-input">
                         </div>
                         <div class="space-y-1 col-span-2">
-                             <label for="prof-qual" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Highest Qualification</label>
-                             <input type="text" id="prof-qual" name="qualification" class="theme-input" autocomplete="off">
+                            <label for="prof-qual"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Highest
+                                Qualification</label>
+                            <input type="text" id="prof-qual" name="qualification" class="theme-input"
+                                autocomplete="off">
                         </div>
                         <div class="space-y-1 col-span-2">
-                             <label for="prof-skills" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Key Skills (Comma Separated)</label>
-                             <input type="text" id="prof-skills" name="skills" class="theme-input" placeholder="e.g. React, Node.js, Design" autocomplete="off">
+                            <label for="prof-skills"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Key Skills (Comma
+                                Separated)</label>
+                            <input type="text" id="prof-skills" name="skills" class="theme-input"
+                                placeholder="e.g. React, Node.js, Design" autocomplete="off">
                         </div>
                     </div>
                 </div>
 
                 <!-- Compensation & Resume -->
                 <div class="glass-card p-8 rounded-3xl space-y-6 md:col-span-2">
-                    <h3 class="text-lg font-bold flex items-center gap-2"><i class="fas fa-indian-rupee-sign text-blue-500"></i> Compensation & Documents</h3>
+                    <h3 class="text-lg font-bold flex items-center gap-2"><i
+                            class="fas fa-indian-rupee-sign text-blue-500"></i> Compensation & Documents</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="space-y-1">
-                             <label for="prof-curr-ctc" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Current Monthly CTC</label>
-                             <div class="relative">
-                                 <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">₹</span>
-                                 <input type="number" id="prof-curr-ctc" name="currentCTC" class="theme-input pl-8" autocomplete="off">
-                             </div>
+                            <label for="prof-curr-ctc"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Current Monthly
+                                CTC</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">₹</span>
+                                <input type="number" id="prof-curr-ctc" name="currentCTC" class="theme-input pl-8"
+                                    autocomplete="off">
+                            </div>
                         </div>
                         <div class="space-y-1">
-                             <label for="prof-exp-ctc" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Expected Monthly CTC</label>
-                             <div class="relative">
-                                 <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">₹</span>
-                                 <input type="number" id="prof-exp-ctc" name="expectedCTC" class="theme-input pl-8" autocomplete="off">
-                             </div>
+                            <label for="prof-exp-ctc"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Expected Monthly
+                                CTC</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">₹</span>
+                                <input type="number" id="prof-exp-ctc" name="expectedCTC" class="theme-input pl-8"
+                                    autocomplete="off">
+                            </div>
                         </div>
                         <div class="space-y-1 md:col-span-3">
-                             <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Upload Resume <span class="normal-case font-normal">(PDF / DOC / DOCX)</span></label>
-                             <input type="file" id="resume-file-input" accept=".pdf,.doc,.docx" class="hidden">
-                             <div onclick="document.getElementById('resume-file-input').click()" class="theme-input flex items-center gap-3 cursor-pointer hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-all group">
-                                 <div class="w-9 h-9 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                                     <i class="fas fa-cloud-upload-alt text-blue-500 group-hover:scale-110 transition-transform"></i>
-                                 </div>
-                                 <div class="flex-1 min-w-0">
-                                     <p id="resume-upload-label" class="text-sm text-slate-400 truncate">Click to upload your resume...</p>
-                                 </div>
-                                 <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Browse</span>
-                             </div>
-                             <div id="resume-progress-bar" class="hidden mt-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full h-1.5">
-                                 <div id="resume-progress-fill" class="bg-blue-600 h-1.5 rounded-full transition-all duration-300" style="width:0%"></div>
-                             </div>
-                             <input type="hidden" name="resumeUrl" id="resume-url-hidden">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Upload Resume
+                                <span class="normal-case font-normal">(PDF / DOC / DOCX)</span></label>
+                            <input type="file" id="resume-file-input" accept=".pdf,.doc,.docx" class="hidden">
+                            <div onclick="document.getElementById('resume-file-input').click()"
+                                class="theme-input flex items-center gap-3 cursor-pointer hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-all group">
+                                <div
+                                    class="w-9 h-9 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i
+                                        class="fas fa-cloud-upload-alt text-blue-500 group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p id="resume-upload-label" class="text-sm text-slate-400 truncate">Click to upload
+                                        your resume...</p>
+                                </div>
+                                <span
+                                    class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Browse</span>
+                            </div>
+                            <div id="resume-progress-bar"
+                                class="hidden mt-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full h-1.5">
+                                <div id="resume-progress-fill"
+                                    class="bg-blue-600 h-1.5 rounded-full transition-all duration-300" style="width:0%">
+                                </div>
+                            </div>
+                            <input type="hidden" name="resumeUrl" id="resume-url-hidden">
                         </div>
                         <div class="space-y-1 md:col-span-3">
-                             <label for="prof-notes" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cover Letter / Personal Note</label>
-                             <textarea id="prof-notes" name="notes" rows="4" class="theme-input resize-none" placeholder="Tell us why you're a great fit..."></textarea>
+                            <label for="prof-notes"
+                                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cover Letter /
+                                Personal Note</label>
+                            <textarea id="prof-notes" name="notes" rows="4" class="theme-input resize-none"
+                                placeholder="Tell us why you're a great fit..."></textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="md:col-span-2 flex justify-center pb-12">
-                     <button type="submit" class="btn-primary px-12 group">
-                         Complete Profile Setup
-                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                     </button>
+                    <button type="submit" class="btn-primary px-12 group">
+                        Complete Profile Setup
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
                 </div>
             </form>
         </div>
@@ -467,20 +608,27 @@
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                     <h2 id="greeting" class="text-4xl font-black text-slate-800 dark:text-white">Hello, Candidate!</h2>
-                    <p class="text-slate-500 dark:text-slate-400 mt-1">Explore job openings and track your application status here.</p>
+                    <p class="text-slate-500 dark:text-slate-400 mt-1">Explore job openings and track your application
+                        status here.</p>
                 </div>
-                
+
                 <div class="flex p-1 bg-slate-100 dark:bg-slate-800/50 rounded-2xl w-fit">
-                    <button id="tab-jobs" class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-white dark:bg-slate-800 shadow-sm text-blue-600">Browse Jobs</button>
-                    <button id="tab-apps" class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all text-slate-500 hover:text-slate-700">My Applications</button>
+                    <button id="tab-jobs"
+                        class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all bg-white dark:bg-slate-800 shadow-sm text-blue-600">Browse
+                        Jobs</button>
+                    <button id="tab-apps"
+                        class="px-6 py-2.5 rounded-xl font-bold text-sm transition-all text-slate-500 hover:text-slate-700">My
+                        Applications</button>
                 </div>
             </div>
 
             <!-- Search & Filter Bar -->
             <div id="jobs-filter-bar" class="glass-card p-4 rounded-2xl flex flex-col md:flex-row items-center gap-3">
                 <div class="relative flex-1 w-full">
-                    <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm pointer-events-none"></i>
-                    <input type="text" id="job-search-input" placeholder="Search by title, skill or keyword..." class="theme-input pl-10 !py-2.5 text-sm">
+                    <i
+                        class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm pointer-events-none"></i>
+                    <input type="text" id="job-search-input" placeholder="Search by title, skill or keyword..."
+                        class="theme-input pl-10 !py-2.5 text-sm">
                 </div>
                 <select id="job-filter-dept" class="theme-input w-full md:w-48 !py-2.5 text-sm">
                     <option value="">All Departments</option>
@@ -488,7 +636,8 @@
                 <select id="job-filter-location" class="theme-input w-full md:w-44 !py-2.5 text-sm">
                     <option value="">All Locations</option>
                 </select>
-                <button id="job-filter-clear" onclick="clearJobFilters()" class="btn-secondary px-4 !py-2.5 text-sm whitespace-nowrap flex-shrink-0">
+                <button id="job-filter-clear" onclick="clearJobFilters()"
+                    class="btn-secondary px-4 !py-2.5 text-sm whitespace-nowrap flex-shrink-0">
                     <i class="fas fa-times mr-1.5"></i>Clear
                 </button>
             </div>
@@ -504,34 +653,42 @@
             </div>
 
             <!-- Exposure & Content (Company Info) -->
-            <div id="exposure-section" class="hidden mt-16 pt-12 max-w-4xl mx-auto border-t border-slate-200 dark:border-slate-800 animate-fade-in">
+            <div id="exposure-section"
+                class="hidden mt-16 pt-12 max-w-4xl mx-auto border-t border-slate-200 dark:border-slate-800 animate-fade-in">
                 <div class="glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-start justify-between">
                     <div class="flex-1 space-y-4">
                         <h3 class="text-xl font-black text-slate-800 dark:text-white flex items-center gap-2">
                             <i class="fas fa-building text-blue-500"></i> About Us
                         </h3>
-                        <p id="portal-about" class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl"></p>
+                        <p id="portal-about"
+                            class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl"></p>
                     </div>
                     <div class="flex-shrink-0 space-y-4 md:border-l border-slate-200 dark:border-slate-700 md:pl-8">
-                        <h3 class="text-sm font-bold text-slate-800 dark:text-white uppercase tracking-wider">Contact & Connect</h3>
+                        <h3 class="text-sm font-bold text-slate-800 dark:text-white uppercase tracking-wider">Contact &
+                            Connect</h3>
                         <div class="space-y-3">
                             <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                <div class="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-500">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-500">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <a id="portal-email" href="#" class="hover:text-blue-500 transition-colors">—</a>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                <div class="w-8 h-8 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-green-500">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-green-500">
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <a id="portal-phone" href="#" class="hover:text-green-500 transition-colors">—</a>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
-                                <div class="w-8 h-8 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500">
                                     <i class="fab fa-linkedin-in"></i>
                                 </div>
-                                <a id="portal-linkedin" href="#" target="_blank" class="hidden hover:text-indigo-500 transition-colors font-semibold">LinkedIn Profile</a>
+                                <a id="portal-linkedin" href="#" target="_blank"
+                                    class="hidden hover:text-indigo-500 transition-colors font-semibold">LinkedIn
+                                    Profile</a>
                             </div>
                         </div>
                     </div>
@@ -542,7 +699,8 @@
         <!-- Candidate Profile View -->
         <div id="candidate-profile-view" class="hidden max-w-4xl mx-auto py-8 space-y-6 animate-fade-in">
             <div class="flex items-center gap-4">
-                <button onclick="window.showView('portal-view')" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <button onclick="window.showView('portal-view')"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                     <i class="fas fa-arrow-left text-slate-600 dark:text-slate-300"></i>
                 </button>
                 <h2 class="text-3xl font-black text-slate-900 dark:text-white">My Profile</h2>
@@ -550,14 +708,20 @@
 
             <!-- Profile Header Card -->
             <div class="glass-card rounded-3xl p-8 flex flex-col md:flex-row items-center gap-6">
-                <div id="prof-avatar-lg" class="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center text-white text-4xl font-black shadow-2xl shadow-blue-500/30 flex-shrink-0">C</div>
+                <div id="prof-avatar-lg"
+                    class="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center text-white text-4xl font-black shadow-2xl shadow-blue-500/30 flex-shrink-0">
+                    C</div>
                 <div class="flex-1 text-center md:text-left">
                     <h3 id="prof-name" class="text-2xl font-black text-slate-900 dark:text-white">—</h3>
                     <p id="prof-email" class="text-slate-500 text-sm mt-1">—</p>
                     <p id="prof-phone" class="text-slate-500 text-sm">—</p>
                     <div class="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
-                        <span id="prof-location-badge" class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold rounded-full"><i class="fas fa-location-dot mr-1"></i>—</span>
-                        <span id="prof-exp-badge" class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold rounded-full"><i class="fas fa-briefcase mr-1"></i>—</span>
+                        <span id="prof-location-badge"
+                            class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold rounded-full"><i
+                                class="fas fa-location-dot mr-1"></i>—</span>
+                        <span id="prof-exp-badge"
+                            class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs font-bold rounded-full"><i
+                                class="fas fa-briefcase mr-1"></i>—</span>
                     </div>
                 </div>
                 <button onclick="openEditProfile()" class="btn-primary px-6 self-start md:self-center flex-shrink-0">
@@ -569,22 +733,26 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Personal Info -->
                 <div class="glass-card rounded-3xl p-6 space-y-4">
-                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i class="fas fa-user text-blue-500"></i>Personal Details</h4>
+                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i
+                            class="fas fa-user text-blue-500"></i>Personal Details</h4>
                     <div class="space-y-3 text-sm" id="prof-personal-details"></div>
                 </div>
                 <!-- Professional Info -->
                 <div class="glass-card rounded-3xl p-6 space-y-4">
-                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i class="fas fa-briefcase text-blue-500"></i>Professional</h4>
+                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i
+                            class="fas fa-briefcase text-blue-500"></i>Professional</h4>
                     <div class="space-y-3 text-sm" id="prof-professional-details"></div>
                 </div>
                 <!-- Address -->
                 <div class="glass-card rounded-3xl p-6 space-y-4">
-                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i class="fas fa-map-marker-alt text-blue-500"></i>Address</h4>
+                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i
+                            class="fas fa-map-marker-alt text-blue-500"></i>Address</h4>
                     <div class="space-y-3 text-sm" id="prof-address-details"></div>
                 </div>
                 <!-- Compensation -->
                 <div class="glass-card rounded-3xl p-6 space-y-4">
-                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i class="fas fa-indian-rupee-sign text-blue-500"></i>Compensation</h4>
+                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i
+                            class="fas fa-indian-rupee-sign text-blue-500"></i>Compensation</h4>
                     <div class="space-y-3 text-sm" id="prof-compensation-details"></div>
                 </div>
             </div>
@@ -592,10 +760,12 @@
             <!-- Resume Preview -->
             <div class="glass-card rounded-3xl p-6 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i class="fas fa-file-alt text-blue-500"></i>Resume</h4>
+                    <h4 class="font-black text-sm uppercase tracking-widest text-slate-500 flex items-center gap-2"><i
+                            class="fas fa-file-alt text-blue-500"></i>Resume</h4>
                     <div class="flex gap-2" id="prof-resume-actions"></div>
                 </div>
-                <div id="prof-resume-preview" class="w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800" style="height:520px">
+                <div id="prof-resume-preview" class="w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800"
+                    style="height:520px">
                     <p class="text-center text-slate-400 text-sm pt-20">No resume uploaded yet.</p>
                 </div>
             </div>
@@ -604,11 +774,13 @@
         <!-- Job Details View -->
         <div id="job-details-view" class="hidden max-w-4xl mx-auto py-8 space-y-6 animate-fade-in">
             <div class="flex items-center gap-4">
-                <button onclick="window.showView('portal-view')" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <button onclick="window.showView('portal-view')"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                     <i class="fas fa-arrow-left text-slate-600 dark:text-slate-300"></i>
                 </button>
                 <div class="flex-1">
-                    <span id="jd-dept" class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest rounded-lg">Department</span>
+                    <span id="jd-dept"
+                        class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-black uppercase tracking-widest rounded-lg">Department</span>
                 </div>
                 <div id="jd-action-container">
                     <button id="jd-apply-btn" class="btn-primary px-6">Apply Now</button>
@@ -617,17 +789,25 @@
 
             <!-- Header Card -->
             <div class="glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-6 items-start md:items-center">
-                <div class="w-16 h-16 bg-blue-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-3xl text-blue-600 flex-shrink-0">
+                <div
+                    class="w-16 h-16 bg-blue-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-3xl text-blue-600 flex-shrink-0">
                     <i class="fas fa-briefcase"></i>
                 </div>
                 <div class="flex-1">
-                    <h2 id="jd-title" class="text-3xl font-black text-slate-900 dark:text-white leading-tight">Job Title</h2>
+                    <h2 id="jd-title" class="text-3xl font-black text-slate-900 dark:text-white leading-tight">Job Title
+                    </h2>
                     <p id="jd-company" class="text-slate-500 font-medium mt-1">Company Name</p>
                 </div>
                 <div class="flex flex-wrap gap-2 md:w-1/3 justify-start md:justify-end">
-                    <span id="jd-location" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-xl"><i class="fas fa-location-dot mr-1"></i>Location</span>
-                    <span id="jd-salary" class="px-3 py-1.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-xl"><i class="fas fa-indian-rupee-sign mr-1"></i>Salary</span>
-                    <span id="jd-type" class="px-3 py-1.5 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-bold rounded-xl"><i class="far fa-clock mr-1"></i>Full-time</span>
+                    <span id="jd-location"
+                        class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-xl"><i
+                            class="fas fa-location-dot mr-1"></i>Location</span>
+                    <span id="jd-salary"
+                        class="px-3 py-1.5 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-xl"><i
+                            class="fas fa-indian-rupee-sign mr-1"></i>Salary</span>
+                    <span id="jd-type"
+                        class="px-3 py-1.5 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-bold rounded-xl"><i
+                            class="far fa-clock mr-1"></i>Full-time</span>
                 </div>
             </div>
 
@@ -636,7 +816,8 @@
                 <div class="md:col-span-2 space-y-6">
                     <div class="glass-card rounded-3xl p-8">
                         <h3 class="text-lg font-black text-slate-800 dark:text-white mb-4">Job Description</h3>
-                        <div id="jd-desc" class="prose prose-sm dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                        <div id="jd-desc"
+                            class="prose prose-sm dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
                             <!-- Dynamic Content -->
                         </div>
                     </div>
@@ -645,13 +826,15 @@
                 <!-- Sidebar -->
                 <div class="space-y-6 sticky top-24">
                     <div class="glass-card rounded-3xl p-6">
-                        <h3 class="text-sm font-black uppercase tracking-widest text-slate-800 dark:text-white mb-4">Role Requirements</h3>
+                        <h3 class="text-sm font-black uppercase tracking-widest text-slate-800 dark:text-white mb-4">
+                            Role Requirements</h3>
                         <div id="jd-reqs" class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                             <!-- Dynamic Content -->
                         </div>
                     </div>
                     <div class="glass-card rounded-3xl p-6">
-                        <h3 class="text-sm font-black uppercase tracking-widest text-slate-800 dark:text-white mb-4">Key Skills</h3>
+                        <h3 class="text-sm font-black uppercase tracking-widest text-slate-800 dark:text-white mb-4">Key
+                            Skills</h3>
                         <div id="jd-skills" class="flex flex-wrap gap-2">
                             <!-- Dynamic Content -->
                         </div>
@@ -663,22 +846,25 @@
     </main>
 
     <!-- Global Processing Loader -->
-    <div id="app-loader" class="fixed inset-0 z-[100] bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center hidden">
+    <div id="app-loader"
+        class="fixed inset-0 z-[100] bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-sm flex items-center justify-center hidden">
         <div class="text-center">
-            <div class="w-16 h-16 border-4 border-blue-600/20 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-            <p class="text-xs font-black uppercase tracking-widest text-slate-500 animate-pulse">Processing Request...</p>
+            <div class="w-16 h-16 border-4 border-blue-600/20 border-t-blue-600 rounded-full animate-spin mx-auto mb-4">
+            </div>
+            <p class="text-xs font-black uppercase tracking-widest text-slate-500 animate-pulse">Processing Request...
+            </p>
         </div>
     </div>
 
     <!-- Scripts -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { 
+        import {
             getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword,
             signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup
         } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-        import { 
-            getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc, onSnapshot, serverTimestamp, setDoc, query, where, orderBy 
+        import {
+            getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc, deleteDoc, onSnapshot, serverTimestamp, setDoc, query, where, orderBy
         } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const firebaseConfig = {
@@ -711,7 +897,7 @@
         // Elements
         const views = ['profile-view', 'portal-view', 'candidate-profile-view', 'job-details-view'];
         const loader = document.getElementById('app-loader');
-        
+
         // --- HELPERS ---
         window.showView = (viewId) => {
             views.forEach(v => {
@@ -720,11 +906,11 @@
             });
             const activeView = document.getElementById(viewId);
             if (activeView) activeView.classList.remove('hidden');
-            
+
             // Toggle User Menu & Sign In visibility
             const userMenu = document.getElementById('user-menu');
             const signInBtn = document.getElementById('btn-show-auth');
-            
+
             if (currentUser) {
                 userMenu.classList.remove('hidden');
                 if (signInBtn) signInBtn.classList.add('hidden');
@@ -889,7 +1075,7 @@
             showProcessing(true);
             try {
                 const profileSnap = await getDoc(doc(db, "candidateProfiles", currentUser.uid));
-                
+
                 // Hide auth modal if open
                 toggleAuthModal(false);
 
@@ -972,8 +1158,8 @@
         };
 
         document.getElementById('btn-login-submit').addEventListener('click', handleLogin);
-        document.getElementById('login-email').addEventListener('keypress', (e) => { if(e.key === 'Enter') handleLogin(); });
-        document.getElementById('login-password').addEventListener('keypress', (e) => { if(e.key === 'Enter') handleLogin(); });
+        document.getElementById('login-email').addEventListener('keypress', (e) => { if (e.key === 'Enter') handleLogin(); });
+        document.getElementById('login-password').addEventListener('keypress', (e) => { if (e.key === 'Enter') handleLogin(); });
 
         // Logout
         document.getElementById('btn-logout').addEventListener('click', () => signOut(auth));
@@ -1018,7 +1204,7 @@
                     body: formData
                 });
                 const data = await response.json();
-                
+
                 clearInterval(progressInterval);
 
                 if (data.secure_url) {
@@ -1055,8 +1241,8 @@
                             cityInput.value = po.District || po.Region;
                             // Match state select options
                             const stateOptions = Array.from(stateSelect.options);
-                            const matchState = stateOptions.find(opt => 
-                                opt.value.toLowerCase().includes(po.State.toLowerCase()) || 
+                            const matchState = stateOptions.find(opt =>
+                                opt.value.toLowerCase().includes(po.State.toLowerCase()) ||
                                 po.State.toLowerCase().includes(opt.value.toLowerCase())
                             );
                             if (matchState) stateSelect.value = matchState.value;
@@ -1073,7 +1259,7 @@
             e.preventDefault();
             const formData = new FormData(e.target);
             const profileData = Object.fromEntries(formData.entries());
-            
+
             // Re-formatting address structure for consistency, keeping flattened data as well
             const fullAddress = `${profileData.addressLine1}, ${profileData.addressLine2 ? profileData.addressLine2 + ', ' : ''}${profileData.city}, ${profileData.state} - ${profileData.pincode}`;
             profileData.fullAddress = fullAddress; // For display
@@ -1124,14 +1310,14 @@
 
         const applyJobFilters = () => {
             let fetchedJobs = [...allJobsCache];
-            
+
             if (portalSettings) {
                 if (portalSettings.jobsDisplayMode === 'Selected' && portalSettings.selectedJobsList) {
                     fetchedJobs = fetchedJobs.filter(j => portalSettings.selectedJobsList.includes(j.id));
                 } else if (portalSettings.jobsDisplayMode === 'Rules') {
                     const allowedDepts = portalSettings.jobsFilterDepts || [];
                     const allowedLocs = portalSettings.jobsFilterLocs || [];
-                    
+
                     if (allowedDepts.length > 0 || allowedLocs.length > 0) {
                         fetchedJobs = fetchedJobs.filter(j => {
                             const deptMatch = allowedDepts.length === 0 || allowedDepts.includes(j.department);
@@ -1141,7 +1327,7 @@
                     }
                 }
             }
-            
+
             openJobs = fetchedJobs;
             populateFilterDropdowns();
             renderJobs();
@@ -1244,17 +1430,17 @@
             // Resume Preview
             const previewContainer = document.getElementById('prof-resume-preview');
             const actionsContainer = document.getElementById('prof-resume-actions');
-            
+
             if (p.resumeUrl) {
                 const isPdf = p.resumeUrl.toLowerCase().endsWith('.pdf');
-                
+
                 // Using Google Docs Viewer for docs, native object for PDFs
-                const viewerUrl = isPdf 
-                    ? p.resumeUrl 
+                const viewerUrl = isPdf
+                    ? p.resumeUrl
                     : `https://docs.google.com/viewer?url=${encodeURIComponent(p.resumeUrl)}&embedded=true`;
 
                 previewContainer.innerHTML = `<iframe src="${viewerUrl}" class="w-full h-full border-0" allowfullscreen></iframe>`;
-                
+
                 actionsContainer.innerHTML = `
                     <button onclick="window.open('${p.resumeUrl}', '_blank')" class="text-blue-500 hover:text-blue-600 text-sm font-bold bg-blue-50 dark:bg-blue-900/30 px-3 py-1.5 rounded-lg transition-colors"><i class="fas fa-external-link-alt mr-1"></i>Open</button>
                     <button onclick="deleteResume()" class="text-red-500 hover:text-red-600 text-sm font-bold bg-red-50 dark:bg-red-900/30 px-3 py-1.5 rounded-lg transition-colors"><i class="fas fa-trash-alt mr-1"></i>Delete</button>
@@ -1274,7 +1460,7 @@
                 await updateDoc(doc(db, "candidateProfiles", currentUser.uid), { resumeUrl: '' });
                 currentProfile.resumeUrl = '';
                 renderCandidateProfile();
-            } catch(e) {
+            } catch (e) {
                 alert("Failed to delete resume: " + e.message);
             } finally {
                 showProcessing(false);
@@ -1285,13 +1471,13 @@
         const populateFilterDropdowns = () => {
             const depts = [...new Set(openJobs.map(j => j.department).filter(Boolean))];
             const locs = [...new Set(openJobs.map(j => j.location).filter(Boolean))];
-            
+
             const deptSelect = document.getElementById('job-filter-dept');
             const locSelect = document.getElementById('job-filter-location');
-            
+
             deptSelect.innerHTML = '<option value="">All Departments</option>' + depts.map(d => `<option value="${d}">${d}</option>`).join('');
             locSelect.innerHTML = '<option value="">All Locations</option>' + locs.map(l => `<option value="${l}">${l}</option>`).join('');
-            
+
             deptSelect.value = activeFilters.dept;
             locSelect.value = activeFilters.location;
         };
@@ -1322,7 +1508,7 @@
 
             document.getElementById('jd-dept').innerText = job.department || 'General';
             document.getElementById('jd-title').innerText = job.title;
-            
+
             // Try job.company -> portalSettings.companyName -> portalSettings.companyPrompt -> General fallback
             let companyName = job.company;
             if (!companyName && portalSettings) {
@@ -1332,8 +1518,8 @@
             document.getElementById('jd-company').innerText = companyName || 'Brawn Laboratories Ltd'; // Using the value from user's screenshot as primary fallback
 
             document.getElementById('jd-location').innerHTML = `<i class="fas fa-location-dot mr-1"></i>${job.location || 'Remote'}`;
-            document.getElementById('jd-salary').innerHTML = `<i class="fas fa-indian-rupee-sign mr-1"></i>${job.budget ? (job.budget/100000).toFixed(1) + 'L LPA' : 'TBD'}`;
-            
+            document.getElementById('jd-salary').innerHTML = `<i class="fas fa-indian-rupee-sign mr-1"></i>${job.budget ? (job.budget / 100000).toFixed(1) + 'L LPA' : 'TBD'}`;
+
             // Description mapping
             const descHtml = (job.description || 'No description provided.')
                 .split('\n')
@@ -1351,7 +1537,7 @@
             document.getElementById('jd-reqs').innerHTML = reqsHtml;
 
             // Skills mapping
-            const skillsHtml = job.skills 
+            const skillsHtml = job.skills
                 ? job.skills.split(',').map(s => `<span class="px-2.5 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold rounded-lg text-xs border border-blue-100 dark:border-blue-800">${s.trim()}</span>`).join('')
                 : '<span class="text-slate-400 text-xs italic">Not specified</span>';
             document.getElementById('jd-skills').innerHTML = skillsHtml;
@@ -1370,17 +1556,17 @@
 
         const renderJobs = () => {
             const container = document.getElementById('jobs-pane');
-            
+
             // Apply Filters
             let filteredJobs = openJobs.filter(job => {
-                const matchSearch = !activeFilters.search || 
-                    (job.title && job.title.toLowerCase().includes(activeFilters.search)) || 
+                const matchSearch = !activeFilters.search ||
+                    (job.title && job.title.toLowerCase().includes(activeFilters.search)) ||
                     (job.description && job.description.toLowerCase().includes(activeFilters.search)) ||
                     (job.skills && job.skills.toLowerCase().includes(activeFilters.search));
-                
+
                 const matchDept = !activeFilters.dept || job.department === activeFilters.dept;
                 const matchLoc = !activeFilters.location || job.location === activeFilters.location;
-                
+
                 return matchSearch && matchDept && matchLoc;
             });
 
@@ -1399,7 +1585,7 @@
 
             container.innerHTML = filteredJobs.map(job => {
                 const applied = myApplications.find(a => a.jobId === job.id);
-                const btnHtml = applied 
+                const btnHtml = applied
                     ? `<button disabled class="btn-secondary w-full cursor-not-allowed opacity-70"><i class="fas fa-check-circle text-emerald-500"></i> Applied</button>`
                     : `<button onclick="applyToJob('${job.id}')" class="btn-primary w-full">${portalSettings?.customCtaText || 'Apply Now'}</button>`;
 
@@ -1416,7 +1602,7 @@
                             <div class="flex items-center gap-4 text-xs font-bold text-slate-600 dark:text-slate-400 mb-8">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-indian-rupee-sign text-emerald-500"></i>
-                                    <span>₹${job.budget ? (job.budget/100000).toFixed(1) + 'L' : 'NA'} LPA</span>
+                                    <span>₹${job.budget ? (job.budget / 100000).toFixed(1) + 'L' : 'NA'} LPA</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-clock text-orange-400"></i>
@@ -1447,11 +1633,11 @@
 
             container.innerHTML = myApplications.map(app => {
                 const job = openJobs.find(j => j.id === app.jobId) || { title: app.jobId, company: 'Unknown', department: 'General', location: 'Remote', budget: 0 };
-                
+
                 const stages = ['Applied', 'Screening', 'Interview', 'Selected', 'Hired'];
                 const currentStageIdx = stages.indexOf(app.stage) !== -1 ? stages.indexOf(app.stage) : (app.stage === 'Rejected' ? -1 : 0);
-                
-                const timelineHtml = app.stage === 'Rejected' 
+
+                const timelineHtml = app.stage === 'Rejected'
                     ? `<div class="w-full bg-red-100 rounded-lg p-2 text-center text-xs font-bold text-red-600">Application Rejected</div>`
                     : `<div class="flex items-center w-full mt-4">
                         ${stages.map((stg, idx) => `
@@ -1485,7 +1671,7 @@
                                     <div class="flex flex-wrap items-center gap-3 mt-1 text-xs font-bold text-slate-500">
                                         <span><i class="fas fa-building mr-1"></i>${job.department || 'General'}</span>
                                         <span><i class="fas fa-location-dot mr-1"></i>${job.location || 'Remote'}</span>
-                                        <span><i class="fas fa-indian-rupee-sign mr-1 text-emerald-500"></i>${job.budget ? (job.budget/100000).toFixed(1) + 'L LPA' : 'TBD'}</span>
+                                        <span><i class="fas fa-indian-rupee-sign mr-1 text-emerald-500"></i>${job.budget ? (job.budget / 100000).toFixed(1) + 'L LPA' : 'TBD'}</span>
                                     </div>
                                 </div>
                             </div>
@@ -1514,7 +1700,7 @@
                 showView('profile-view');
                 return;
             }
-            
+
             showProcessing(true);
             try {
                 const candidateData = {
@@ -1570,7 +1756,7 @@
         };
 
         themeBtn.addEventListener('click', () => setDark(!document.documentElement.classList.contains('dark')));
-        
+
         // Init theme
         if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             setDark(true);
