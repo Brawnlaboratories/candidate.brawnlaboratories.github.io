@@ -264,6 +264,61 @@
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
         }
 
+        /* Company Showcase Specific Enhancements */
+        #company-showcase-view .glass-card {
+            border-radius: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #company-showcase-view .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 45px -15px rgba(31, 38, 135, 0.12);
+        }
+
+        .company-stat-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .dark .company-stat-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.7));
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        #company-hero-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.6), transparent);
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
         .stepper-line {
             position: relative;
             height: 2px;
@@ -1153,8 +1208,7 @@
             </div>
 
             <!-- Jobs Listing Wrapper -->
-            <div id="jobs-container"
-                class="max-w-[1600px] mx-auto w-full items-start -mt-4">
+            <div id="jobs-container" class="max-w-[1600px] mx-auto w-full items-start -mt-4">
 
                 <!-- Main Job List Pane -->
                 <div class="w-full">
@@ -1264,36 +1318,54 @@
 
                         <div class="space-y-8">
                             <!-- Contact -->
-                            <div id="exposure-section"
+                            <div id="company-contact-card"
                                 class="glass-card rounded-3xl p-8 shadow-sm hidden sticky top-24">
                                 <h3
                                     class="text-[11px] font-black text-slate-800 dark:text-white uppercase tracking-widest mb-6">
                                     Connect With Us</h3>
-                                <div class="space-y-4">
-                                    <div class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+                                <div class="space-y-5">
+                                    <div id="row-website"
+                                        class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 group">
                                         <div
-                                            class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-500 shadow-inner">
-                                            <i class="fas fa-envelope"></i>
+                                            class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-500 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                            <i class="fas fa-globe"></i>
                                         </div>
-                                        <a id="portal-email" href="#"
-                                            class="hover:text-blue-500 transition-colors font-medium break-all">—</a>
-                                    </div>
-                                    <div class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-green-500 shadow-inner">
-                                            <i class="fas fa-phone"></i>
+                                        <div class="flex-1 overflow-hidden">
+                                            <p
+                                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-0.5">
+                                                Website</p>
+                                            <a id="portal-website" href="#" target="_blank"
+                                                class="hover:text-blue-500 transition-colors font-bold block truncate">—</a>
                                         </div>
-                                        <a id="portal-phone" href="#"
-                                            class="hover:text-green-500 transition-colors font-medium">—</a>
                                     </div>
-                                    <div class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+                                    <div id="row-location"
+                                        class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 group">
                                         <div
-                                            class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 shadow-inner">
+                                            class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-500 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p
+                                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-0.5">
+                                                Location</p>
+                                            <a id="portal-location" href="#" target="_blank"
+                                                class="hover:text-emerald-500 transition-colors font-bold block leading-snug">—</a>
+                                        </div>
+                                    </div>
+                                    <div id="row-linkedin"
+                                        class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 group">
+                                        <div
+                                            class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-500 shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-all">
                                             <i class="fab fa-linkedin-in"></i>
                                         </div>
-                                        <a id="portal-linkedin" href="#" target="_blank"
-                                            class="hidden hover:text-indigo-500 transition-colors font-bold">LinkedIn
-                                            Profile</a>
+                                        <div class="flex-1">
+                                            <p
+                                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-0.5">
+                                                LinkedIn</p>
+                                            <a id="portal-linkedin" href="#" target="_blank"
+                                                class="hover:text-indigo-500 transition-colors font-bold block">View
+                                                Company Profile</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2396,23 +2468,35 @@
                 ceoCard.classList.add('hidden');
             }
 
-            const exposureSection = document.getElementById('exposure-section');
-            if (company.website || company.location) {
-                exposureSection.classList.remove('hidden');
+            const contactCard = document.getElementById('company-contact-card');
+            if (company.website || company.location || company.linkedin) {
+                contactCard.classList.remove('hidden');
+
+                const webRow = document.getElementById('row-website');
+                const locRow = document.getElementById('row-location');
+                const linkRow = document.getElementById('row-linkedin');
 
                 if (company.website) {
-                    const el = document.getElementById('portal-email');
-                    el.href = company.website;
-                    el.innerHTML = '<i class="fas fa-external-link-alt"></i> Website';
-                }
+                    webRow.classList.remove('hidden');
+                    const link = document.getElementById('portal-website');
+                    link.href = company.website.startsWith('http') ? company.website : `https://${company.website}`;
+                    link.innerText = company.website.replace(/^https?:\/\/(www\.)?/, '').split('/')[0];
+                } else webRow.classList.add('hidden');
+
                 if (company.location) {
-                    const el = document.getElementById('portal-phone');
-                    el.href = `https://maps.google.com/?q=${company.location}`;
-                    el.target = '_blank';
-                    el.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${company.location}`;
-                }
+                    locRow.classList.remove('hidden');
+                    const link = document.getElementById('portal-location');
+                    link.href = `https://maps.google.com/?q=${encodeURIComponent(company.location)}`;
+                    link.innerText = company.location;
+                } else locRow.classList.add('hidden');
+
+                if (company.linkedin) {
+                    linkRow.classList.remove('hidden');
+                    document.getElementById('portal-linkedin').href = company.linkedin;
+                } else linkRow.classList.add('hidden');
+
             } else {
-                exposureSection.classList.add('hidden');
+                contactCard.classList.add('hidden');
             }
 
             document.getElementById('companies-list-view').classList.add('hidden');
